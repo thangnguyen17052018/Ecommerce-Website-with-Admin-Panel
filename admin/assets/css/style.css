@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {/* có tính năng flexbox */
+    display: flex; /* phần tử chính thiết lập là phần tử chứa */ /* mặc định hướng chính nằm ngang, phần tử sắp xếp từ trái qua phải */
+    align-items: center; /* phẩn tử con đẩy vào giữa hàng theo hướng vuông góc */
+    justify-content: center; /* đẩy các phần tử con vào giữa hướng chính */
+    min-height: 100vh; /* nếu chiều cao của trình duyệt là 900px thì 1vh = 9px */
+    background: #78bdb7/* #f7f7f7 */;
+}   
+
+.wrapper {
+    background-color: #fff;
+    border-radius: 16px; /* bo form */
+    box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1), /* ngang - doc - nhoe - kich thuoc - color */
+    /* multiple shadow */ 0 32px 64px -48px rgba(0, 0, 0, 0.5); /* r - g - b - a(opacity) */
+}
+
+.wrapper .login {
+    width: 450px;
+}
+
+.wrapper .register {
+    width: 560px;
+}
+
+/* Register Form */
+.form {
+    padding: 25px 30px;
+}
+
+.form header {
+    font-size: 25px;
+    font-weight: 600; /* độ đậm */
+    padding-bottom: 10px;
+    /* Tạo 1 gradient border */
+    border-bottom: 1.5px solid transparent;
+    border-image: linear-gradient(to left, #c5dbdb, #03a8ad);
+    border-image-slice: 1;
+    /* ##################### */
+    color: #f56c43;
+}
+
+.form form {
+    margin: 20px 0;
+}
+
+.form form .error-text {
+    color: #721c24;
+    background-color: #f8d7da;
+    padding: 8px 10px;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #d42b3c;
+    display: none;
+}
+
+.form form .field {
+    display: flex;
+    flex-direction: column; /* chuyển trục main axis thành chiều dọc -> hiển thị theo dạng cột */
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.form form .field i {
+    position: absolute;
+    right: 15px;
+    color: #ccc;
+    top: 70%;
+    transform: translateY(-50%); /* sử dụng trục Y -50% */
+    cursor: pointer;
+}
+
+.form form .field i.active::before { /* chèn nội dung vào trước element i */
+    content: "\f070"; /* unicode của icon trong bộ font */
+    color: #333;
+}
+
+
+.form form .number-details,
+.form form .name-details  {
+    display: flex; /* gán flex để 2 cái input dàn ngang từ trái sang phải (row) mặc định */
+}
+
+/* Căn tạo khoảng cách giữa 2 input */
+
+form .number-details .field:first-child,
+form .name-details .field:first-child {
+    margin-right: 30px; 
+}
+
+form .number-details .field:last-child,
+form .name-details .field:last-child {
+    margin-left: 30px;
+}
+
+
+/* ////////////////////////////////////////// */
+
+.form form .field label {
+    display: inline-block;
+    margin-bottom: 2px;
+    font-weight: 600;
+    color: #f37b56;
+    margin-top: 5px;
+}
+
+.form form .field input {
+    outline: none; /* đường viền bao ngoài */ 
+}
+
+.form form .input input {
+    height: 42px;
+    width: 100%; /* chiều rộng của nó cũng chính là chiều rộng của phần tử cha */
+    font-size: 16px;
+    padding: 0 10px;
+    /* border: 1px solid #ccc; */
+    background: none;
+    border: none;
+    border-radius: 5px;
+    border-bottom: 2px solid #74bdb7;
+    color: #53aca4;
+}
+
+
+.form form .btn input {
+    margin-top: 12px;
+    height: 42px;
+    border: 2px solid #f37b56;
+    font-size: 18px;
+    font-weight: 600;
+    background: #fff/* #f79577 */;
+    color: #f37b56;
+    border-radius: 5px;
+    cursor: pointer; /* kiểu con trỏ khi di chuột tới button*/
+}
+
+.form form .btn:hover input {
+    background: #da795c;
+    color: #fff;
+    border: none;
+}
+.form .link {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 17px;
+    color:#4c918b;
+}
+
+.form .link a {
+    color:  #0f5c55;
+    font-weight: 600;
+}
+
+.form .link a:hover {
+    text-decoration: underline;
+    color: #da795c;
+    font-weight: 600;
+}
+
